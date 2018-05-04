@@ -31,6 +31,16 @@ class App extends Component {
         })
     }
 
+    deleteItem( itemIndex ) {
+        const listData = this.state.listData.slice();
+
+        listData.splice( itemIndex , 1 );
+
+        this.setState({
+            listData
+        });
+    }
+
     componentDidMount() {
         this.getListData();
     }
@@ -40,7 +50,7 @@ class App extends Component {
             <div className="container">
                 <h1 className="center">To Do List</h1>
                 <AddItem addItem={this.addItem.bind(this)}/>
-                <List data={this.state.listData} />
+                <List delete={this.deleteItem.bind(this)} data={this.state.listData} />
             </div>
         );
     }
