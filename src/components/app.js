@@ -35,10 +35,10 @@ class App extends Component {
 
     }
 
-    addItem(item) {
-        this.setState({
-            listData: [item, ...this.state.listData]
-        })
+    async addItem(item) {
+        await axios.post(`${BASE_URL}/todos${API_KEY}`, item);
+
+        this.getListData();
     }
 
     async deleteItem(id) {
