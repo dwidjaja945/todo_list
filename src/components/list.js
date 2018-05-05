@@ -15,7 +15,7 @@ export default (props) => {
                     {item.title}
                 </div>
                 <div className='col s2 right-align'>
-                    <button onClick={ props.delete.bind( this , itemIndex ) } className='btn red darken-2'>Delete</button>
+                    <button onClick={ props.delete.bind( this , item._id ) } className='btn red darken-2'>Delete</button>
                 </div>
             </li>
         )
